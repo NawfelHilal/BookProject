@@ -1,0 +1,95 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BookProject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BookProject_jar</output-path>
+    <root id="archive" name="BookProject.jar">
+      <element id="module-output" name="BookProject" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-email/1.5/commons-email-1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/21/javafx-controls-21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/antlr/antlr/2.7.7/antlr-2.7.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/velocity/velocity/1.7/velocity-1.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/jakarta/persistence/jakarta.persistence-api/2.2.3/jakarta.persistence-api-2.2.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/21/javafx-base-21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/21/javafx-graphics-21-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/jandex/2.2.3.Final/jandex-2.2.3.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sun/mail/javax.mail/1.5.6/javax.mail-1.5.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/hibernate/common/hibernate-commons-annotations/5.1.2.Final/hibernate-commons-annotations-5.1.2.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/21/javafx-base-21-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/controlsfx/controlsfx/11.1.2/controlsfx-11.1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.10.21/byte-buddy-1.10.21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/javassist/javassist/3.27.0-GA/javassist-3.27.0-GA.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/glassfish/jaxb/txw2/2.3.1/txw2-2.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/21/javafx-fxml-21-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/javaee-api/8.0.1/javaee-api-8.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.4/commons-lang-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.30.Final/hibernate-core-5.4.30.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging/3.4.1.Final/jboss-logging-3.4.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/21/javafx-controls-21-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/xerial/sqlite-jdbc/3.44.1.0/sqlite-jdbc-3.44.1.0.jar" path-in-jar="/" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-console-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-console-l1-2-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-datetime-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-debug-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-errorhandling-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-file-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-file-l1-2-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-file-l2-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-handle-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-heap-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-interlocked-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-libraryloader-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-localization-l1-2-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-memory-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-namedpipe-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-processenvironment-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-processthreads-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-processthreads-l1-1-1.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-profile-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-rtlsupport-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-string-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-synch-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-synch-l1-2-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-sysinfo-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-timezone-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-core-util-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-conio-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-convert-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-environment-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-filesystem-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-heap-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-locale-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-math-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-multibyte-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-private-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-process-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-runtime-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-stdio-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-string-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-time-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/api-ms-win-crt-utility-l1-1-0.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/glass.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/javafx_font.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/msvcp140.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/msvcp140_1.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/msvcp140_2.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/prism_d3d.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/ucrtbase.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/vcruntime140.dll" />
+      <element id="file-copy" path="$USER_HOME$/.openjfx/cache/21+31/amd64/vcruntime140_1.dll" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,18 @@
+Index: src/main/resources/config.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/config.properties b/src/main/resources/config.properties
+new file mode 100644
+--- /dev/null	
++++ b/src/main/resources/config.properties	
+@@ -0,0 +1,5 @@
++app.title= Gestion de livre
++app.author= Nawfel, Mahaut
++app.description= Votre application de gestion de livre
++app.version=1.0
++app.release_date=2024-05-06
+\ No newline at end of file
+diff --git a/recette.db b/recette.db
+new file mode 100644
