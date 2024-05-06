@@ -187,11 +187,10 @@ public class HelloController {
         email.setAuthentication("emailjava@gmx.fr","emailjava06");
         email.setStartTLSEnabled(true);
         email.setFrom("emailjava@gmx.fr");
-        email.setSubject("Test Mail");
-        email.setMsg("This is a test mail numero 2");
+        email.setSubject("Livre ajouter");
+        email.setMsg("Le livre ... a était ajouter avec succés");
         email.addTo("emailjava@gmx.fr");
 
-        email.setHtmlMsg("<html>Le corps de l'email <b> en gras </b> avec une image :");
         email.setTextMsg("Votre client mail ne supporte pas le html");
         System.out.println("email sent");
         email.send();
