@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 
 @Entity
 public class Book {
@@ -23,16 +22,35 @@ public class Book {
     private String isbn;
     private String title;
     private String author;
-
+    private String publicationYear;
+    private String pageCount;
     private String summary;
 
 
+    public String getPublicationYear() {
+        return publicationYear;
+    }
+
+    public void setPublicationYear(String publicationYear) {
+        this.publicationYear = publicationYear;
+    }
+
+    public String getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(String pageCount) {
+        this.pageCount = pageCount;
+    }
+
     // Constructor avec paramètres
-    public Book(String isbn, String title, String author, String summary) {
+    public Book(String isbn, String title, String author, String summary, String publicationYear, String pageCount) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
         this.summary = summary;
+        this.publicationYear = publicationYear;
+        this.pageCount = pageCount;
 
     }
 
@@ -78,11 +96,12 @@ public class Book {
 
     // Méthode pour fournir un aperçu des informations du livre
     public String getPreview() {
-        return this.getTitle() + "\n\n" +
-                "Author: " + this.getAuthor() + "\n" +
-                "ISBN: " + this.getIsbn() + "\n" +
-                "Back Cover Text: \n" + this.getSummary();
+        return "\n\nTitle" + this.getTitle() + "\n " +
+                "\n\nAuthor: " + this.getAuthor() + "\n" +
+                "\n\nISBN: " + this.getIsbn() + "\n" +
+                "\n\nSummary: \n" + this.getSummary();
     }
+
 
     @Override
     public String toString() {

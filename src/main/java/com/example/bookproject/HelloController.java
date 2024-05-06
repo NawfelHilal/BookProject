@@ -24,6 +24,12 @@ public class HelloController {
     private TextArea summaryTextArea;
     @FXML
     private TextField isbnTextField;
+    @FXML
+    private  TextField publicationYearField;
+    @FXML
+    private TextField pageCountField;
+    @FXML
+    private TextField preview;
 
     @FXML
     private Label statusLabel;
@@ -57,16 +63,36 @@ public class HelloController {
     }
 @FXML
     private void addBook() {
-        Book newBook = new Book();
-        newBook.setTitle(titleTextField.getText());
-        newBook.setAuthor(authorTextArea.getText());
-        newBook.setSummary(summaryTextArea.getText());
-        newBook.setIsbn(isbnTextField.getText());
-        newBook.setId(1234L);
-        System.out.println(newBook);
-        new BookRepository().save(newBook);
+    String titreTexte = titleTextField.getText();
+
+    boolean bookExistante = false;
+    for (Object item : booksListView.getItems()) {
+        if (item instanceof Book) {
+            Book book = (Book) item;
+            if (book.getTitle().equals(titreTexte)){
+                bookExistante = true;
+                break;
+            }
+        }
+    }
+
+    if (bookExistante) {
+        preview.setText("Livre déjà existant");
+        System.out.println("Un livre avec le même titre existe déjà. Impossible d'ajouter un nouveau livre avec le même titre.");
+    } else {
+        String title =titleTextField.getText();
+        String author =authorTextArea.getText();
+        String summary =summaryTextArea.getText();
+        String isbn =isbnTextField.getText();
+        String publicationYear =publicationYearField.getText();
+        String pageCount = pageCountField.getText();
+        Book newBook = new Book(title, author, summary, isbn, publicationYear, pageCount);
         booksListView.getItems().add(newBook);
+        new BookRepository().save(newBook);
+        System.out.println("Nouveau livre ajoutée : " + newBook);
+        preview.setText(String.valueOf(newBook));
         statusLabel.setText("New book added: " + newBook.getTitle());
+    }
     }
 @FXML
     private void editBook() {
@@ -76,6 +102,8 @@ public class HelloController {
             selectedBook.setAuthor(authorTextArea.getText());
             selectedBook.setSummary(summaryTextArea.getText());
             selectedBook.setIsbn(isbnTextField.getText());
+            selectedBook.setPublicationYear(publicationYearField.getText());
+            selectedBook.setPageCount(pageCountField.getText());
             bookRepository.update(selectedBook);
             statusLabel.setText("Updated book: " + selectedBook.getTitle());
             loadBooks();
@@ -87,7 +115,7 @@ public class HelloController {
     Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
     confirmationAlert.setTitle("Confirmation suppression");
     confirmationAlert.setHeaderText(null);
-    confirmationAlert.setContentText("Êtes-vous sûr de vouloir supprimer la recette '" + selectedBook.getTitle() + "' ?");
+    confirmationAlert.setContentText("Êtes-vous sûr de vouloir supprimer le livre '" + selectedBook.getTitle() + "' ?");
 
     ButtonType confirmationButton = new ButtonType("Supprimer", ButtonBar.ButtonData.OK_DONE);
     confirmationAlert.getButtonTypes().setAll(confirmationButton, ButtonType.CANCEL);
@@ -101,7 +129,7 @@ public class HelloController {
         Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
         successAlert.setTitle("Suppression réussie");
         successAlert.setHeaderText(null);
-        successAlert.setContentText("La recette a été supprimée avec succès.");
+        successAlert.setContentText("Le livre a été supprimée avec succès.");
         successAlert.showAndWait();
     }
     }
@@ -111,6 +139,9 @@ public class HelloController {
         authorTextArea.setText(book.getAuthor());
         summaryTextArea.setText(book.getSummary());
         isbnTextField.setText(book.getIsbn());
+        publicationYearField.setText(book.getPublicationYear());
+        pageCountField.setText(book.getPageCount());
+        preview.setText(book.getPreview());
     }
 @FXML
     private void loadBooks() {
