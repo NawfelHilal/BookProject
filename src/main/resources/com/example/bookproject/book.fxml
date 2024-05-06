@@ -10,12 +10,13 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="494.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookproject.HelloController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookproject.HelloController">
   <children>
     <MenuBar prefWidth="642.0" VBox.vgrow="NEVER">
       <menus>
@@ -56,22 +57,25 @@
         </Menu>
       </menus>
     </MenuBar>
-      <BorderPane prefHeight="469.0" prefWidth="1045.0">
+      <BorderPane prefHeight="1054.0" prefWidth="1920.0">
           <center>
-              <VBox spacing="10" VBox.vgrow="ALWAYS">
-                  <HBox spacing="10" VBox.vgrow="ALWAYS">
+              <VBox prefHeight="528.0" prefWidth="1217.0" spacing="10" VBox.vgrow="ALWAYS">
+                  <HBox prefHeight="545.0" prefWidth="1217.0" spacing="10" VBox.vgrow="ALWAYS">
                       <padding>
                           <Insets bottom="10" left="10" right="10" top="10" />
                       </padding>
-                      <ListView fx:id="booksListView" prefHeight="318.0" prefWidth="303.0" VBox.vgrow="ALWAYS" />
-                  <VBox prefHeight="318.0" prefWidth="321.0">
+                      <ListView fx:id="booksListView" prefHeight="997.0" prefWidth="596.0" VBox.vgrow="ALWAYS" />
+                  <VBox prefHeight="997.0" prefWidth="531.0">
                      <children>
-                        <Label text="Detail Book" />
-                        <TextArea fx:id="preview" editable="false" wrapText="true" VBox.vgrow="ALWAYS" prefHeight="399.0" prefWidth="285.0" />
+                        <Label text="View Book" />
+                        <TextArea fx:id="preview" prefHeight="980.0" prefWidth="412.0" />
                      </children>
                   </VBox>
-                      <VBox spacing="10" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
-                      <VBox spacing="10" VBox.vgrow="ALWAYS">
+                      <VBox prefHeight="997.0" prefWidth="657.0" spacing="10" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="601.0" fitWidth="462.0" pickOnBounds="true" preserveRatio="true" />
+                     </children></VBox>
+                      <VBox prefHeight="997.0" prefWidth="509.0" spacing="10" VBox.vgrow="ALWAYS">
                           <Label text="Book Details" />
                           <TextField fx:id="titleTextField" promptText="Title" />
                           <TextArea fx:id="authorTextArea" prefRowCount="5" promptText="Author" VBox.vgrow="ALWAYS" />

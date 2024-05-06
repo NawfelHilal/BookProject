@@ -8,7 +8,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import org.apache.commons.mail.HtmlEmail;
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.VelocityEngine;
+import org.apache.velocity.runtime.RuntimeConstants;
+import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 
+import java.io.StringWriter;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,6 +54,7 @@ public class HelloController {
 
     @FXML
     private void initialize() {
+        sendEmail();
         List<Book> liste = new BookRepository().findAll();
         ObservableList<Object> items = FXCollections.observableArrayList();
         for (Book book:liste){
@@ -57,8 +64,10 @@ public class HelloController {
         addButton.setOnAction(e -> addBook());
         editButton.setOnAction(e -> editBook());
         deleteButton.setOnAction(e -> deleteBook());
+        editButton.setDisable(false);
+        deleteButton.setDisable(false);
         booksListView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-            if (newSelection != null) {
+            if (newSelection != null && newSelection instanceof Book) {
                 updateBookDetailsFields((Book) newSelection);
             }
         });
@@ -96,6 +105,7 @@ public class HelloController {
         System.out.println("Nouveau livre ajoutée : " + newBook);
         preview.setText(String.valueOf(newBook));
         statusLabel.setText("New book added: " + newBook.getTitle());
+        sendEmail();
     }
     loadBooks();
     }
@@ -112,6 +122,7 @@ public class HelloController {
             selectedBook.setFourCouverture(fourCouvertureField.getText());
             bookRepository.update(selectedBook);
             statusLabel.setText("Updated book: " + selectedBook.getTitle());
+            sendEmail();
             loadBooks();
         }
     }
@@ -137,6 +148,7 @@ public class HelloController {
         successAlert.setHeaderText(null);
         successAlert.setContentText("Le livre a été supprimée avec succès.");
         successAlert.showAndWait();
+        sendEmail();
     }
     loadBooks();
     }
@@ -155,17 +167,34 @@ public class HelloController {
 @FXML
     private void sendEmail(){
     try {
+        VelocityEngine ve = new VelocityEngine();
+        ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
+        ve.setProperty("classpath.resource.loader.class",
+                ClasspathResourceLoader.class.getName());
+        ve.init();
+
+        Template t = ve.getTemplate("templates/emailTemplate.vm");
+
+        VelocityContext context = new VelocityContext();
+        context.put("name", "Nawfel");
+
+        StringWriter writer = new StringWriter();
+        t.merge(context, writer);
+
         HtmlEmail email = new HtmlEmail();
-        email.setHostName("smtp.example.com");
+        email.setHostName("mail.gmx.com");
         email.setSmtpPort(587);
         email.setAuthentication("emailjava@gmx.fr","emailjava06");
-        email.setSSLOnConnect(true);
-        email.setFrom("user@example.com");
-        email.addTo("recipient@example.com");
+        email.setStartTLSEnabled(true);
+        email.setFrom("emailjava@gmx.fr");
         email.setSubject("Test Mail");
-        email.setMsg("This is a test mail from Apache Commons Email");
+        email.setMsg("This is a test mail numero 2");
+        email.addTo("emailjava@gmx.fr");
+
+        email.setHtmlMsg("<html>Le corps de l'email <b> en gras </b> avec une image :");
+        email.setTextMsg("Votre client mail ne supporte pas le html");
+        System.out.println("email sent");
         email.send();
-        System.out.println("Email sent successfully!");
     } catch (Exception e) {
         e.printStackTrace();
     }

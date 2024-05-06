@@ -8,6 +8,7 @@ module com.example.bookproject {
     requires org.hibernate.orm.core;
     requires java.naming;
     requires commons.email;
+    requires velocity;
 
 
     opens com.example.bookproject to javafx.fxml;
