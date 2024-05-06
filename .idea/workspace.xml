@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="107a0a3a-058c-4f65-ae5b-47d2f06cb230" name="Changes" comment="Entité Book SQL Dialect">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bookproject/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bookproject/repository/BookRepository.java" afterDir="false" />
+    <list default="true" id="107a0a3a-058c-4f65-ae5b-47d2f06cb230" name="Changes" comment="HibernateUtil">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bookproject/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bookproject/HelloController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714982250878</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="HibernateUtil">
+      <option name="closed" value="true" />
+      <created>1714982736953</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714982736953</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +107,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="create bookproject" />
     <MESSAGE value="Entité Book SQL Dialect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entité Book SQL Dialect" />
+    <MESSAGE value="HibernateUtil" />
+    <option name="LAST_COMMIT_MESSAGE" value="HibernateUtil" />
   </component>
 </project>
