@@ -105,7 +105,7 @@ public class HelloController {
         System.out.println("Nouveau livre ajoutée : " + newBook);
         preview.setText(String.valueOf(newBook));
         statusLabel.setText("New book added: " + newBook.getTitle());
-        sendEmail();
+        sendEmail(newBook);
     }
     loadBooks();
     }
@@ -122,7 +122,7 @@ public class HelloController {
             selectedBook.setFourCouverture(fourCouvertureField.getText());
             bookRepository.update(selectedBook);
             statusLabel.setText("Updated book: " + selectedBook.getTitle());
-            sendEmail();
+            sendEmail(selectedBook);
             loadBooks();
         }
     }
@@ -148,7 +148,7 @@ public class HelloController {
         successAlert.setHeaderText(null);
         successAlert.setContentText("Le livre a été supprimée avec succès.");
         successAlert.showAndWait();
-        sendEmail();
+        sendEmail(selectedBook);
     }
     loadBooks();
     }
@@ -198,6 +198,41 @@ public class HelloController {
         e.printStackTrace();
     }
 }
+
+    private void sendEmail(Book book){
+        try {
+            VelocityEngine ve = new VelocityEngine();
+            ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
+            ve.setProperty("classpath.resource.loader.class",
+                    ClasspathResourceLoader.class.getName());
+            ve.init();
+
+            Template t = ve.getTemplate("templates/emailTemplate.vm");
+
+            VelocityContext context = new VelocityContext();
+            context.put("name", "Nawfel");
+
+            StringWriter writer = new StringWriter();
+            t.merge(context, writer);
+
+            HtmlEmail email = new HtmlEmail();
+            email.setHostName("mail.gmx.com");
+            email.setSmtpPort(587);
+            email.setAuthentication("emailjava@gmx.fr","emailjava06");
+            email.setStartTLSEnabled(true);
+            email.setFrom("emailjava@gmx.fr");
+            email.setSubject("Livre ajouter");
+            email.setMsg("Le livre"+ book.getTitle() + ", écrit par "+ book.getAuthor() +" a était ajouter avec succés");
+            email.addTo("emailjava@gmx.fr");
+
+            email.setTextMsg("Votre client mail ne supporte pas le html");
+            System.out.println("email sent");
+            email.send();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 @FXML
     private void loadBooks() {
         booksListView.getItems().setAll(bookRepository.findAll());
