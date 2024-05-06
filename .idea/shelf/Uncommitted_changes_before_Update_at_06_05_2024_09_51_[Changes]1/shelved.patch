@@ -1,0 +1,560 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n  <modelVersion>4.0.0</modelVersion>\r\n\r\n  <groupId>com.example</groupId>\r\n  <artifactId>BookProject</artifactId>\r\n  <version>1.0-SNAPSHOT</version>\r\n  <name>BookProject</name>\r\n\r\n  <properties>\r\n    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    <maven.compiler.source>21</maven.compiler.source>\r\n    <maven.compiler.target>21</maven.compiler.target>\r\n<junit.version>5.10.0</junit.version>  </properties>\r\n\r\n  <dependencies>\r\n    <dependency>\r\n      <groupId>org.openjfx</groupId>\r\n      <artifactId>javafx-controls</artifactId>\r\n      <version>17.0.6</version>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.openjfx</groupId>\r\n      <artifactId>javafx-fxml</artifactId>\r\n      <version>17.0.6</version>\r\n    </dependency>\r\n<dependency>\r\n      <groupId>org.controlsfx</groupId>\r\n      <artifactId>controlsfx</artifactId>\r\n      <version>11.1.2</version>\r\n    </dependency>\r\n<dependency>\r\n      <groupId>org.junit.jupiter</groupId>\r\n      <artifactId>junit-jupiter-api</artifactId>\r\n      <version>${junit.version}</version>\r\n      <scope>test</scope>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.junit.jupiter</groupId>\r\n      <artifactId>junit-jupiter-engine</artifactId>\r\n      <version>${junit.version}</version>\r\n      <scope>test</scope>\r\n    </dependency>\r\n    <dependency>\r\n      <groupId>org.hibernate</groupId>\r\n      <artifactId>hibernate-core</artifactId>\r\n      <version>5.4.30.Final</version>\r\n    </dependency>\r\n  <dependency>\r\n    <groupId>org.xerial</groupId>\r\n    <artifactId>sqlite-jdbc</artifactId>\r\n    <version>3.44.1.0</version>\r\n  </dependency>\r\n  <!-- Java Persistence API -->\r\n  <dependency>\r\n    <groupId>jakarta.persistence</groupId>\r\n    <artifactId>jakarta.persistence-api</artifactId>\r\n    <version>2.2.3</version>\r\n  </dependency>\r\n\r\n  <dependency>\r\n    <groupId>jakarta.platform</groupId>\r\n    <artifactId>jakarta.jakartaee-api</artifactId>\r\n    <version>8.0.0</version>\r\n    <scope>provided</scope>\r\n  </dependency>\r\n  <dependency>\r\n    <groupId>javax</groupId>\r\n    <artifactId>javaee-api</artifactId>\r\n    <version>8.0.1</version>\r\n  </dependency>\r\n  </dependencies>\r\n\r\n  <build>\r\n    <plugins>\r\n      <plugin>\r\n        <groupId>org.apache.maven.plugins</groupId>\r\n        <artifactId>maven-compiler-plugin</artifactId>\r\n        <version>3.11.0</version>\r\n        <configuration>\r\n          <source>14</source>\r\n          <target>14</target>\r\n        </configuration>\r\n      </plugin>\r\n      <plugin>\r\n        <groupId>org.openjfx</groupId>\r\n        <artifactId>javafx-maven-plugin</artifactId>\r\n        <version>0.0.8</version>\r\n        <executions>\r\n          <execution>\r\n            <!-- Default configuration for running with: mvn clean javafx:run -->\r\n            <id>default-cli</id>\r\n            <configuration>\r\n              <mainClass>com.example.bookproject/com.example.bookproject.HelloApplication</mainClass>\r\n              <launcher>app</launcher>\r\n              <jlinkZipName>app</jlinkZipName>\r\n              <jlinkImageName>app</jlinkImageName>\r\n              <noManPages>true</noManPages>\r\n              <stripDebug>true</stripDebug>\r\n              <noHeaderFiles>true</noHeaderFiles>\r\n            </configuration>\r\n          </execution>\r\n        </executions>\r\n      </plugin>\r\n    </plugins>\r\n  </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -19,12 +19,12 @@
+     <dependency>
+       <groupId>org.openjfx</groupId>
+       <artifactId>javafx-controls</artifactId>
+-      <version>17.0.6</version>
++      <version>21</version>
+     </dependency>
+     <dependency>
+       <groupId>org.openjfx</groupId>
+       <artifactId>javafx-fxml</artifactId>
+-      <version>17.0.6</version>
++      <version>21</version>
+     </dependency>
+ <dependency>
+       <groupId>org.controlsfx</groupId>
+@@ -60,6 +60,7 @@
+     <version>2.2.3</version>
+   </dependency>
+ 
++
+   <dependency>
+     <groupId>jakarta.platform</groupId>
+     <artifactId>jakarta.jakartaee-api</artifactId>
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module com.example.bookproject {\r\n    requires javafx.controls;\r\n    requires javafx.fxml;\r\n\r\n    requires org.controlsfx.controls;\r\n    requires java.persistence;\r\n\r\n    opens com.example.bookproject to javafx.fxml;\r\n    exports com.example.bookproject;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+--- a/src/main/java/module-info.java	
++++ b/src/main/java/module-info.java	
+@@ -1,10 +1,18 @@
+ module com.example.bookproject {
+     requires javafx.controls;
+     requires javafx.fxml;
+-
++    requires java.base;
+     requires org.controlsfx.controls;
+     requires java.persistence;
++    requires java.sql;
++    requires org.hibernate.orm.core;
++    requires java.naming;
++
+ 
+     opens com.example.bookproject to javafx.fxml;
+     exports com.example.bookproject;
++    opens com.example.bookproject.Model to org.hibernate.orm.core;
++    exports com.example.bookproject.Model;
++    exports org.hibernate.mydialect to org.hibernate.orm.core;
++
+ }
+\ No newline at end of file
+Index: src/main/resources/META-INF/hibernate.cfg..xml
+===================================================================
+diff --git a/src/main/resources/META-INF/hibernate.cfg..xml b/src/main/resources/META-INF/hibernate.cfg..xml
+deleted file mode 100644
+--- a/src/main/resources/META-INF/hibernate.cfg..xml	
++++ /dev/null	
+@@ -1,18 +0,0 @@
+-<?xml version='1.0' encoding='utf-8'?>
+-<!DOCTYPE hibernate-configuration PUBLIC
+-        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+-<hibernate-configuration>
+-    <session-factory>
+-        <!-- Propriétés de connexion à la base de données -->
+-        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+-        <property name="hibernate.connection.url">jdbc:sqlite:recettes.db</property>
+-        <property name="hibernate.dialect">org.hibernate.mydialect.SQLiteDialect</property>
+-        <!-- Paramètres Hibernate -->
+-        <property name="show_sql">true</property>
+-        <property name="format_sql">true</property>
+-        <property name="hibernate.hbm2ddl.auto">update</property>
+-        <!-- Déclaration des classes entités -->
+-        <mapping class="com.example.bookproject.Model.Book"/>
+-    </session-factory>
+-</hibernate-configuration>
+\ No newline at end of file
+Index: src/main/java/org/example/Main.java
+===================================================================
+diff --git a/src/main/java/org/example/Main.java b/src/main/java/org/example/Main.java
+deleted file mode 100644
+--- a/src/main/java/org/example/Main.java	
++++ /dev/null	
+@@ -1,17 +0,0 @@
+-package org.example;
+-
+-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+-public class Main {
+-    public static void main(String[] args) {
+-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+-        // to see how IntelliJ IDEA suggests fixing it.
+-        System.out.printf("Hello and welcome!");
+-
+-        for (int i = 1; i <= 5; i++) {
+-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+-            System.out.println("i = " + i);
+-        }
+-    }
+-}
+\ No newline at end of file
+Index: src/main/resources/hibernate.cfg.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/hibernate.cfg.xml b/src/main/resources/hibernate.cfg.xml
+new file mode 100644
+--- /dev/null	
++++ b/src/main/resources/hibernate.cfg.xml	
+@@ -0,0 +1,18 @@
++<?xml version='1.0' encoding='utf-8'?>
++<!DOCTYPE hibernate-configuration PUBLIC
++        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
++        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
++<hibernate-configuration>
++    <session-factory>
++        <!-- Propriétés de connexion à la base de données -->
++        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
++        <property name="hibernate.connection.url">jdbc:sqlite:recettes.db</property>
++        <property name="hibernate.dialect">org.hibernate.mydialect.SQLiteDialect</property>
++        <!-- Paramètres Hibernate -->
++        <property name="show_sql">true</property>
++        <property name="format_sql">true</property>
++        <property name="hibernate.hbm2ddl.auto">update</property>
++        <!-- Déclaration des classes entités -->
++        <mapping class="com.example.bookproject.Model.Book"/>
++    </session-factory>
++</hibernate-configuration>
+\ No newline at end of file
+Index: src/main/java/org/hibernate/mydialect/SQLiteDialect.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/hibernate/mydialect/SQLiteDialect.java b/src/main/java/org/hibernate/mydialect/SQLiteDialect.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/org/hibernate/mydialect/SQLiteDialect.java	
+@@ -0,0 +1,385 @@
++package org.hibernate.mydialect;
++
++/*
++ * The author disclaims copyright to this source code.  In place of
++ * a legal notice, here is a blessing:
++ *
++ *    May you do good and not evil.
++ *    May you find forgiveness for yourself and forgive others.
++ *    May you share freely, never taking more than you give.
++ * From https://github.com/gwenn/sqlite-dialect
++ *
++ */
++
++import java.sql.SQLException;
++import java.sql.Types;
++
++import org.hibernate.JDBCException;
++import org.hibernate.MappingException;
++import org.hibernate.ScrollMode;
++import org.hibernate.dialect.Dialect;
++import org.hibernate.dialect.function.AbstractAnsiTrimEmulationFunction;
++import org.hibernate.dialect.function.NoArgSQLFunction;
++import org.hibernate.dialect.function.SQLFunction;
++import org.hibernate.dialect.function.SQLFunctionTemplate;
++import org.hibernate.dialect.function.StandardSQLFunction;
++import org.hibernate.dialect.function.VarArgsSQLFunction;
++import org.hibernate.dialect.identity.GetGeneratedKeysDelegate;
++import org.hibernate.dialect.identity.IdentityColumnSupport;
++
++import org.hibernate.dialect.pagination.AbstractLimitHandler;
++import org.hibernate.dialect.pagination.LimitHandler;
++import org.hibernate.dialect.pagination.LimitHelper;
++import org.hibernate.dialect.unique.DefaultUniqueDelegate;
++import org.hibernate.dialect.unique.UniqueDelegate;
++import org.hibernate.engine.spi.RowSelection;
++import org.hibernate.exception.DataException;
++import org.hibernate.exception.JDBCConnectionException;
++import org.hibernate.exception.LockAcquisitionException;
++import org.hibernate.exception.spi.SQLExceptionConversionDelegate;
++import org.hibernate.exception.spi.TemplatedViolatedConstraintNameExtracter;
++import org.hibernate.exception.spi.ViolatedConstraintNameExtracter;
++import org.hibernate.id.PostInsertIdentityPersister;
++import org.hibernate.internal.util.JdbcExceptionHelper;
++import org.hibernate.mapping.Column;
++import org.hibernate.type.StandardBasicTypes;
++
++/**
++ * An SQL dialect for SQLite 3.
++ */
++public class SQLiteDialect extends Dialect {
++    private final UniqueDelegate uniqueDelegate;
++
++    public SQLiteDialect() {
++        registerColumnType( Types.BIT, "boolean" );
++        //registerColumnType(Types.FLOAT, "float");
++        //registerColumnType(Types.DOUBLE, "double");
++        registerColumnType( Types.DECIMAL, "decimal" );
++        registerColumnType( Types.CHAR, "char" );
++        registerColumnType( Types.LONGVARCHAR, "longvarchar" );
++        registerColumnType( Types.TIMESTAMP, "datetime" );
++        registerColumnType( Types.BINARY, "blob" );
++        registerColumnType( Types.VARBINARY, "blob" );
++        registerColumnType( Types.LONGVARBINARY, "blob" );
++
++        registerFunction( "concat", new VarArgsSQLFunction( StandardBasicTypes.STRING, "", "||", "" ) );
++        registerFunction( "mod", new SQLFunctionTemplate( StandardBasicTypes.INTEGER, "?1 % ?2" ) );
++        registerFunction( "quote", new StandardSQLFunction( "quote", StandardBasicTypes.STRING ) );
++        registerFunction( "random", new NoArgSQLFunction( "random", StandardBasicTypes.INTEGER ) );
++        registerFunction( "round", new StandardSQLFunction( "round" ) );
++        registerFunction( "substr", new StandardSQLFunction( "substr", StandardBasicTypes.STRING ) );
++        registerFunction( "trim", new AbstractAnsiTrimEmulationFunction() {
++            protected SQLFunction resolveBothSpaceTrimFunction() {
++                return new SQLFunctionTemplate( StandardBasicTypes.STRING, "trim(?1)" );
++            }
++
++            protected SQLFunction resolveBothSpaceTrimFromFunction() {
++                return new SQLFunctionTemplate( StandardBasicTypes.STRING, "trim(?2)" );
++            }
++
++            protected SQLFunction resolveLeadingSpaceTrimFunction() {
++                return new SQLFunctionTemplate( StandardBasicTypes.STRING, "ltrim(?1)" );
++            }
++
++            protected SQLFunction resolveTrailingSpaceTrimFunction() {
++                return new SQLFunctionTemplate( StandardBasicTypes.STRING, "rtrim(?1)" );
++            }
++
++            protected SQLFunction resolveBothTrimFunction() {
++                return new SQLFunctionTemplate( StandardBasicTypes.STRING, "trim(?1, ?2)" );
++            }
++
++            protected SQLFunction resolveLeadingTrimFunction() {
++                return new SQLFunctionTemplate( StandardBasicTypes.STRING, "ltrim(?1, ?2)" );
++            }
++
++            protected SQLFunction resolveTrailingTrimFunction() {
++                return new SQLFunctionTemplate( StandardBasicTypes.STRING, "rtrim(?1, ?2)" );
++            }
++        } );
++        uniqueDelegate = new SQLiteUniqueDelegate( this );
++    }
++
++    // database type mapping support ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++    @Override
++    public String getCastTypeName(int code) {
++        // FIXME
++        return super.getCastTypeName( code );
++    }
++
++    // IDENTITY support ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++    @Override
++    public IdentityColumnSupport getIdentityColumnSupport() {
++        return new IdentityColumnSupport() {
++            @Override
++            public boolean supportsIdentityColumns() {
++                return false;
++            }
++
++            @Override
++            public boolean supportsInsertSelectIdentity() {
++                return false;
++            }
++
++            @Override
++            public boolean hasDataTypeInIdentityColumn() {
++                return false;
++            }
++
++            @Override
++            public String appendIdentitySelectToInsert(String s) {
++                return null;
++            }
++
++            @Override
++            public String getIdentitySelectString(String s, String s1, int i) throws MappingException {
++                return null;
++            }
++
++            @Override
++            public String getIdentityColumnString(int i) throws MappingException {
++                return null;
++            }
++
++            @Override
++            public String getIdentityInsertString() {
++                return null;
++            }
++
++            @Override
++            public GetGeneratedKeysDelegate buildGetGeneratedKeysDelegate(PostInsertIdentityPersister postInsertIdentityPersister, Dialect dialect) {
++                return null;
++            }
++        };
++    }
++
++    // limit/offset support ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++    private static final AbstractLimitHandler LIMIT_HANDLER = new AbstractLimitHandler() {
++        @Override
++        public String processSql(String sql, RowSelection selection) {
++            final boolean hasOffset = LimitHelper.hasFirstRow( selection );
++            return sql + (hasOffset ? " limit ? offset ?" : " limit ?");
++        }
++
++        @Override
++        public boolean supportsLimit() {
++            return true;
++        }
++
++        @Override
++        public boolean bindLimitParametersInReverseOrder() {
++            return true;
++        }
++    };
++
++    @Override
++    public LimitHandler getLimitHandler() {
++        return LIMIT_HANDLER;
++    }
++
++    // lock acquisition support ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++    @Override
++    public boolean supportsLockTimeouts() {
++        // may be http://sqlite.org/c3ref/db_mutex.html ?
++        return false;
++    }
++
++    @Override
++    public String getForUpdateString() {
++        return "";
++    }
++
++    @Override
++    public boolean supportsOuterJoinForUpdate() {
++        return false;
++    }
++
++  /*
++    @Override
++  public boolean dropTemporaryTableAfterUse() {
++    return true; // temporary tables are only dropped when the connection is closed. If the connection is pooled...
++  }
++  */
++
++    // current timestamp support ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++    @Override
++    public boolean supportsCurrentTimestampSelection() {
++        return true;
++    }
++
++    public boolean isCurrentTimestampSelectStringCallable() {
++        return false;
++    }
++
++    @Override
++    public String getCurrentTimestampSelectString() {
++        return "select current_timestamp";
++    }
++
++    // SQLException support ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++    private static final int SQLITE_BUSY = 5;
++    private static final int SQLITE_LOCKED = 6;
++    private static final int SQLITE_IOERR = 10;
++    private static final int SQLITE_CORRUPT = 11;
++    private static final int SQLITE_NOTFOUND = 12;
++    private static final int SQLITE_FULL = 13;
++    private static final int SQLITE_CANTOPEN = 14;
++    private static final int SQLITE_PROTOCOL = 15;
++    private static final int SQLITE_TOOBIG = 18;
++    private static final int SQLITE_CONSTRAINT = 19;
++    private static final int SQLITE_MISMATCH = 20;
++    private static final int SQLITE_NOTADB = 26;
++
++    @Override
++    public SQLExceptionConversionDelegate buildSQLExceptionConversionDelegate() {
++        return new SQLExceptionConversionDelegate() {
++            @Override
++            public JDBCException convert(SQLException sqlException, String message, String sql) {
++                final int errorCode = JdbcExceptionHelper.extractErrorCode( sqlException );
++                if (errorCode == SQLITE_TOOBIG || errorCode == SQLITE_MISMATCH) {
++                    return new DataException( message, sqlException, sql );
++                }
++                else if (errorCode == SQLITE_BUSY || errorCode == SQLITE_LOCKED) {
++                    return new LockAcquisitionException( message, sqlException, sql );
++                }
++                else if ((errorCode >= SQLITE_IOERR && errorCode <= SQLITE_PROTOCOL) || errorCode == SQLITE_NOTADB) {
++                    return new JDBCConnectionException( message, sqlException, sql );
++                }
++
++                // returning null allows other delegates to operate
++                return null;
++            }
++        };
++    }
++
++    public ViolatedConstraintNameExtracter getViolatedConstraintNameExtracter() {
++        return EXTRACTER;
++    }
++
++    private static final ViolatedConstraintNameExtracter EXTRACTER = new TemplatedViolatedConstraintNameExtracter() {
++        @Override
++        protected String doExtractConstraintName(SQLException sqle) throws NumberFormatException {
++            final int errorCode = JdbcExceptionHelper.extractErrorCode( sqle );
++            if (errorCode == SQLITE_CONSTRAINT) {
++                return extractUsingTemplate( "constraint ", " failed", sqle.getMessage() );
++            }
++            return null;
++        }
++    };
++
++    // union subclass support ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++    @Override
++    public boolean supportsUnionAll() {
++        return true;
++    }
++
++    // DDL support ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++    @Override
++    public boolean canCreateSchema() {
++        return false;
++    }
++
++    @Override
++    public boolean hasAlterTable() {
++        // As specified in NHibernate dialect
++        return false;
++    }
++
++    @Override
++    public boolean dropConstraints() {
++        return false;
++    }
++
++    @Override
++    public boolean qualifyIndexName() {
++        return false;
++    }
++
++    @Override
++    public String getAddColumnString() {
++        return "add column";
++    }
++
++    @Override
++    public String getDropForeignKeyString() {
++        throw new UnsupportedOperationException( "No drop foreign key syntax supported by SQLiteDialect" );
++    }
++
++    @Override
++    public String getAddForeignKeyConstraintString(String constraintName,
++                                                   String[] foreignKey, String referencedTable, String[] primaryKey,
++                                                   boolean referencesPrimaryKey) {
++        throw new UnsupportedOperationException( "No add foreign key syntax supported by SQLiteDialect" );
++    }
++
++    @Override
++    public String getAddPrimaryKeyConstraintString(String constraintName) {
++        throw new UnsupportedOperationException( "No add primary key syntax supported by SQLiteDialect" );
++    }
++
++    @Override
++    public boolean supportsCommentOn() {
++        return true;
++    }
++
++    @Override
++    public boolean supportsIfExistsBeforeTableName() {
++        return true;
++    }
++
++  /* not case insensitive for unicode characters by default (ICU extension needed)
++    public boolean supportsCaseInsensitiveLike() {
++    return true;
++  }
++  */
++
++    @Override
++    public boolean doesReadCommittedCauseWritersToBlockReaders() {
++        // TODO Validate (WAL mode...)
++        return true;
++    }
++
++    public boolean doesRepeatableReadCauseReadersToBlockWriters() {
++        return true;
++    }
++
++    @Override
++    public boolean supportsTupleDistinctCounts() {
++        return false;
++    }
++
++    public int getInExpressionCountLimit() {
++        // Compile/runtime time option: http://sqlite.org/limits.html#max_variable_number
++        return 1000;
++    }
++
++    @Override
++    public UniqueDelegate getUniqueDelegate() {
++        return uniqueDelegate;
++    }
++    private static class SQLiteUniqueDelegate extends DefaultUniqueDelegate {
++        public SQLiteUniqueDelegate(Dialect dialect) {
++            super( dialect );
++        }
++        @Override
++        public String getColumnDefinitionUniquenessFragment(Column column) {
++            return " unique";
++        }
++    }
++
++    @Override
++    public String getSelectGUIDString() {
++        return "select hex(randomblob(16))";
++    }
++
++    @Override
++    public ScrollMode defaultScrollMode() {
++        return ScrollMode.FORWARD_ONLY;
++    }
++}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_14\" default=\"true\" project-jdk-name=\"14\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="true" project-jdk-name="14" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
