@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -15,7 +14,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookproject.HelloController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -63,18 +62,18 @@
                       <padding>
                           <Insets bottom="10" left="10" right="10" top="10" />
                       </padding>
-                      <ListView fx:id="recettes" prefWidth="200" VBox.vgrow="ALWAYS" />
+                      <ListView fx:id="booksListView" prefWidth="200" VBox.vgrow="ALWAYS" />
                       <VBox spacing="10" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
                       <VBox spacing="10" VBox.vgrow="ALWAYS">
                           <Label text="Book Details" />
-                          <TextField fx:id="title" promptText="Title" />
-                          <TextArea fx:id="ingredients" prefRowCount="5" promptText="Author" VBox.vgrow="ALWAYS" />
-                          <TextArea fx:id="instructions" promptText="Summary" VBox.vgrow="ALWAYS" />
-                          <TextField fx:id="prepTime" promptText="ISBN" />
+                          <TextField fx:id="titleTextField" promptText="Title" />
+                          <TextArea fx:id="authorTextArea" prefRowCount="5" promptText="Author" VBox.vgrow="ALWAYS" />
+                          <TextArea fx:id="summaryTextArea" promptText="Summary" VBox.vgrow="ALWAYS" />
+                          <TextField fx:id="isbnTextField" promptText="ISBN" />
                           <HBox spacing="10">
-                              <Button fx:id="add" text="Add" />
-                              <Button fx:id="edit" text="Edit" />
-                              <Button fx:id="delete" text="Delete" />
+                              <Button fx:id="addButton" text="Add" onAction="#addBook" />
+                              <Button fx:id="editButton" text="Edit" />
+                              <Button fx:id="deleteButton" text="Delete" />
                           </HBox>
                       </VBox>
                   </HBox>
@@ -85,7 +84,7 @@
                   <padding>
                       <Insets bottom="10" left="10" right="10" top="10" />
                   </padding>
-                  <Label fx:id="status" text="New book added" />
+                  <Label fx:id="statusLabel" text="New book added" />
               </HBox>
           </bottom>
       </BorderPane>

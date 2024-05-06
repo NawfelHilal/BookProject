@@ -27,6 +27,7 @@ public class BookRepository {
     public void save(Book book) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            System.out.println(session);
             transaction = session.beginTransaction();
             session.save(book);
             transaction.commit();

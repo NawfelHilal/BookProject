@@ -12,34 +12,6 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String isbn;
-    private String title;
-    private String author;
-    private Integer publicationYear;
-    private Integer pageCount;
-
-    @Lob
-    private String backCoverText;
-
-    @Lob
-    private byte[] coverImage;
-
-    // Constructor avec paramètres
-    public Book(String isbn, String title, String author, Integer publicationYear, Integer pageCount, String backCoverText, byte[] coverImage) {
-        this.isbn = isbn;
-        this.title = title;
-        this.author = author;
-        this.publicationYear = publicationYear;
-        this.pageCount = pageCount;
-        this.backCoverText = backCoverText;
-        this.coverImage = coverImage;
-    }
-
-    // Constructeur sans paramètres (requis pour Hibernate)
-    public Book() {
-    }
-
-    // Getters et Setters
     public Long getId() {
         return id;
     }
@@ -47,6 +19,28 @@ public class Book {
     public void setId(Long id) {
         this.id = id;
     }
+
+    private String isbn;
+    private String title;
+    private String author;
+
+    private String summary;
+
+
+    // Constructor avec paramètres
+    public Book(String isbn, String title, String author, String summary) {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.summary = summary;
+
+    }
+
+    // Constructeur sans paramètres (requis pour Hibernate)
+    public Book() {
+    }
+
+    // Getters et Setters
 
     public String getIsbn() {
         return isbn;
@@ -72,51 +66,32 @@ public class Book {
         this.author = author;
     }
 
-    public Integer getPublicationYear() {
-        return publicationYear;
+
+    public String getSummary() {
+        return summary;
     }
 
-    public void setPublicationYear(Integer publicationYear) {
-        this.publicationYear = publicationYear;
+    public void setSummary(String backCoverText) {
+        this.summary = backCoverText;
     }
 
-    public Integer getPageCount() {
-        return pageCount;
-    }
-
-    public void setPageCount(Integer pageCount) {
-        this.pageCount = pageCount;
-    }
-
-    public String getBackCoverText() {
-        return backCoverText;
-    }
-
-    public void setBackCoverText(String backCoverText) {
-        this.backCoverText = backCoverText;
-    }
-
-    public byte[] getCoverImage() {
-        return coverImage;
-    }
-
-    public void setCoverImage(byte[] coverImage) {
-        this.coverImage = coverImage;
-    }
 
     // Méthode pour fournir un aperçu des informations du livre
     public String getPreview() {
         return this.getTitle() + "\n\n" +
                 "Author: " + this.getAuthor() + "\n" +
                 "ISBN: " + this.getIsbn() + "\n" +
-                "Publication Year: " + this.getPublicationYear() + "\n" +
-                "Page Count: " + this.getPageCount() + "\n\n" +
-                "Back Cover Text: \n" + this.getBackCoverText();
+                "Back Cover Text: \n" + this.getSummary();
     }
 
-    // Redéfinir la méthode toString pour afficher le titre du livre
     @Override
     public String toString() {
-        return getTitle();
+        return "Book{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", summary='" + summary + '\'' +
+                '}';
     }
 }

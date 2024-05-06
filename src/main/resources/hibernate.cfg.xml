@@ -6,7 +6,7 @@
     <session-factory>
         <!-- Propriétés de connexion à la base de données -->
         <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
-        <property name="hibernate.connection.url">jdbc:sqlite:recettes.db</property>
+        <property name="hibernate.connection.url">jdbc:sqlite:books.db</property>
         <property name="hibernate.dialect">org.hibernate.mydialect.SQLiteDialect</property>
         <!-- Paramètres Hibernate -->
         <property name="show_sql">true</property>
