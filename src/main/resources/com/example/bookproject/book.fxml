@@ -67,7 +67,7 @@
                   <VBox prefHeight="318.0" prefWidth="321.0">
                      <children>
                         <Label text="Detail Book" />
-                        <TextField fx:id="preview" prefHeight="399.0" prefWidth="285.0" />
+                        <TextArea fx:id="preview" editable="false" wrapText="true" VBox.vgrow="ALWAYS" prefHeight="399.0" prefWidth="285.0" />
                      </children>
                   </VBox>
                       <VBox spacing="10" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />

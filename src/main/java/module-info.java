@@ -7,6 +7,7 @@ module com.example.bookproject {
     requires java.sql;
     requires org.hibernate.orm.core;
     requires java.naming;
+    requires commons.email;
 
 
     opens com.example.bookproject to javafx.fxml;

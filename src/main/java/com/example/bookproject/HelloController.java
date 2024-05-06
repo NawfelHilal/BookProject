@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import org.apache.commons.mail.HtmlEmail;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +32,7 @@ public class HelloController {
     @FXML
     TextArea fourCouvertureField;
     @FXML
-    private TextField preview;
+    private TextArea preview;
 
     @FXML
     private Label statusLabel;
@@ -96,6 +97,7 @@ public class HelloController {
         preview.setText(String.valueOf(newBook));
         statusLabel.setText("New book added: " + newBook.getTitle());
     }
+    loadBooks();
     }
 @FXML
     private void editBook() {
@@ -136,6 +138,7 @@ public class HelloController {
         successAlert.setContentText("Le livre a été supprimée avec succès.");
         successAlert.showAndWait();
     }
+    loadBooks();
     }
 @FXML
     private void updateBookDetailsFields(Book book) {
@@ -148,6 +151,25 @@ public class HelloController {
         fourCouvertureField.setText(book.getFourCouverture());
         preview.setText(book.getPreview());
     }
+
+@FXML
+    private void sendEmail(){
+    try {
+        HtmlEmail email = new HtmlEmail();
+        email.setHostName("smtp.example.com");
+        email.setSmtpPort(587);
+        email.setAuthentication("emailjava@gmx.fr","emailjava06");
+        email.setSSLOnConnect(true);
+        email.setFrom("user@example.com");
+        email.addTo("recipient@example.com");
+        email.setSubject("Test Mail");
+        email.setMsg("This is a test mail from Apache Commons Email");
+        email.send();
+        System.out.println("Email sent successfully!");
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 @FXML
     private void loadBooks() {
         booksListView.getItems().setAll(bookRepository.findAll());

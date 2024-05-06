@@ -106,11 +106,15 @@ public class Book {
 
     // Méthode pour fournir un aperçu des informations du livre
     public String getPreview() {
-        return "\n\nTitle" + this.getTitle() + "\n " +
-                "\n\nAuthor: " + this.getAuthor() + "\n" +
-                "\n\nISBN: " + this.getIsbn() + "\n" +
-                "\n\nSummary: \n" + this.getSummary();
+        return "Title: " + this.getTitle() + "\n" +
+                "Author: " + this.getAuthor() + "\n" +
+                "ISBN: " + this.getIsbn() + "\n" +
+                "Summary: " + this.getSummary() + "\n" +
+                "Publication Year: " + this.getPublicationYear() + "\n" +
+                "Page Count: " + this.getPageCount()
+        ;
     }
+
 
 
     @Override
