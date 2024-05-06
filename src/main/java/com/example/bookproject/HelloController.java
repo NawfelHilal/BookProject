@@ -29,6 +29,8 @@ public class HelloController {
     @FXML
     private TextField pageCountField;
     @FXML
+    TextArea fourCouvertureField;
+    @FXML
     private TextField preview;
 
     @FXML
@@ -86,7 +88,8 @@ public class HelloController {
         String isbn =isbnTextField.getText();
         String publicationYear =publicationYearField.getText();
         String pageCount = pageCountField.getText();
-        Book newBook = new Book(title, author, summary, isbn, publicationYear, pageCount);
+        String fourCouverture = fourCouvertureField.getText();
+        Book newBook = new Book(title, author, summary, isbn, publicationYear, pageCount, fourCouverture);
         booksListView.getItems().add(newBook);
         new BookRepository().save(newBook);
         System.out.println("Nouveau livre ajoutée : " + newBook);
@@ -104,6 +107,7 @@ public class HelloController {
             selectedBook.setIsbn(isbnTextField.getText());
             selectedBook.setPublicationYear(publicationYearField.getText());
             selectedBook.setPageCount(pageCountField.getText());
+            selectedBook.setFourCouverture(fourCouvertureField.getText());
             bookRepository.update(selectedBook);
             statusLabel.setText("Updated book: " + selectedBook.getTitle());
             loadBooks();
@@ -141,6 +145,7 @@ public class HelloController {
         isbnTextField.setText(book.getIsbn());
         publicationYearField.setText(book.getPublicationYear());
         pageCountField.setText(book.getPageCount());
+        fourCouvertureField.setText(book.getFourCouverture());
         preview.setText(book.getPreview());
     }
 @FXML

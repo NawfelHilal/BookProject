@@ -26,6 +26,16 @@ public class Book {
     private String pageCount;
     private String summary;
 
+    public String getFourCouverture() {
+        return fourCouverture;
+    }
+
+    public void setFourCouverture(String fourCouverture) {
+        this.fourCouverture = fourCouverture;
+    }
+
+    private String fourCouverture;
+
 
     public String getPublicationYear() {
         return publicationYear;
@@ -44,14 +54,14 @@ public class Book {
     }
 
     // Constructor avec paramètres
-    public Book(String isbn, String title, String author, String summary, String publicationYear, String pageCount) {
+    public Book(String isbn, String title, String author, String summary, String publicationYear, String pageCount, String fourCouverture) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
         this.summary = summary;
         this.publicationYear = publicationYear;
         this.pageCount = pageCount;
-
+        this.fourCouverture = fourCouverture;
     }
 
     // Constructeur sans paramètres (requis pour Hibernate)
