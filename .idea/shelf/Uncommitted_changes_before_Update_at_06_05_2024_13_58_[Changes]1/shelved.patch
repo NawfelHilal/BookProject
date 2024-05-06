@@ -1,0 +1,20 @@
+Index: src/main/java/com/example/bookproject/Model/Book.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.bookproject.Model;\r\n\r\nimport javax.persistence.Entity;\r\nimport javax.persistence.GeneratedValue;\r\nimport javax.persistence.GenerationType;\r\nimport javax.persistence.Id;\r\nimport javax.persistence.Lob;\r\n\r\n@Entity\r\npublic class Book {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.AUTO)\r\n    private Long id;\r\n\r\n    public Long getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(Long id) {\r\n        this.id = id;\r\n    }\r\n\r\n    private String isbn;\r\n    private String title;\r\n    private String author;\r\n\r\n    private String summary;\r\n\r\n\r\n    // Constructor avec paramètres\r\n    public Book(String isbn, String title, String author, String summary) {\r\n        this.isbn = isbn;\r\n        this.title = title;\r\n        this.author = author;\r\n        this.summary = summary;\r\n\r\n    }\r\n\r\n    // Constructeur sans paramètres (requis pour Hibernate)\r\n    public Book() {\r\n    }\r\n\r\n    // Getters et Setters\r\n\r\n    public String getIsbn() {\r\n        return isbn;\r\n    }\r\n\r\n    public void setIsbn(String isbn) {\r\n        this.isbn = isbn;\r\n    }\r\n\r\n    public String getTitle() {\r\n        return title;\r\n    }\r\n\r\n    public void setTitle(String title) {\r\n        this.title = title;\r\n    }\r\n\r\n    public String getAuthor() {\r\n        return author;\r\n    }\r\n\r\n    public void setAuthor(String author) {\r\n        this.author = author;\r\n    }\r\n\r\n\r\n    public String getSummary() {\r\n        return summary;\r\n    }\r\n\r\n    public void setSummary(String backCoverText) {\r\n        this.summary = backCoverText;\r\n    }\r\n\r\n\r\n    // Méthode pour fournir un aperçu des informations du livre\r\n    public String getPreview() {\r\n        return this.getTitle() + \"\\n\\n\" +\r\n                \"Author: \" + this.getAuthor() + \"\\n\" +\r\n                \"ISBN: \" + this.getIsbn() + \"\\n\" +\r\n                \"Back Cover Text: \\n\" + this.getSummary();\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"Book{\" +\r\n                \"id=\" + id +\r\n                \", isbn='\" + isbn + '\\'' +\r\n                \", title='\" + title + '\\'' +\r\n                \", author='\" + author + '\\'' +\r\n                \", summary='\" + summary + '\\'' +\r\n                '}';\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/bookproject/Model/Book.java b/src/main/java/com/example/bookproject/Model/Book.java
+--- a/src/main/java/com/example/bookproject/Model/Book.java	
++++ b/src/main/java/com/example/bookproject/Model/Book.java	
+@@ -4,7 +4,6 @@
+ import javax.persistence.GeneratedValue;
+ import javax.persistence.GenerationType;
+ import javax.persistence.Id;
+-import javax.persistence.Lob;
+ 
+ @Entity
+ public class Book {
+diff --git a/recette.db b/recette.db
+new file mode 100644

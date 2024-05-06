@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="107a0a3a-058c-4f65-ae5b-47d2f06cb230" name="Changes" comment="ajout champs supplementaire + design">
+    <list default="true" id="107a0a3a-058c-4f65-ae5b-47d2f06cb230" name="Changes" comment="HelloController">
+      <change afterPath="$PROJECT_DIR$/recette.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bookproject/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/books.db" beforeDir="false" afterPath="$PROJECT_DIR$/books.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bookproject/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bookproject/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bookproject/Model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bookproject/Model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bookproject/book.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bookproject/book.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,17 +46,24 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.HelloApplication.executor": "Run",
+    "Maven.BookProject [clean].executor": "Run",
+    "Maven.BookProject [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "Maven.BookProject [package].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nawfe/IdeaProjects/tp_email/tp_email",
+    "last_opened_file_path": "C:/Users/mwind/.openjfx/cache/21+31/amd64/vcruntime140_1.dll",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.editor",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -66,6 +71,13 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nawfe\IdeaProjects\tp_email\BookProject\src\main\resources\com\example\bookproject" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -76,6 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1714979135922</updated>
       <workItem from="1714979137014" duration="1725000" />
+      <workItem from="1714999953959" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="create bookproject">
       <option name="closed" value="true" />
