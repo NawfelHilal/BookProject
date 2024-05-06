@@ -14,7 +14,7 @@ import java.util.Optional;
 public class HelloController {
 
     @FXML
-    private ListView<Book> booksListView;
+    private ListView booksListView;
 
     @FXML
     private TextField titleTextField;
@@ -44,12 +44,13 @@ public class HelloController {
         for (Book book:liste){
             items.add(book);
         }
+        booksListView.setItems(items);
         addButton.setOnAction(e -> addBook());
         editButton.setOnAction(e -> editBook());
         deleteButton.setOnAction(e -> deleteBook());
         booksListView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                updateBookDetailsFields(newSelection);
+                updateBookDetailsFields((Book) newSelection);
             }
         });
         loadBooks();
@@ -69,7 +70,7 @@ public class HelloController {
     }
 @FXML
     private void editBook() {
-        Book selectedBook = booksListView.getSelectionModel().getSelectedItem();
+        Book selectedBook = (Book) booksListView.getSelectionModel().getSelectedItem();
         if (selectedBook != null) {
             selectedBook.setTitle(titleTextField.getText());
             selectedBook.setAuthor(authorTextArea.getText());
@@ -77,11 +78,12 @@ public class HelloController {
             selectedBook.setIsbn(isbnTextField.getText());
             bookRepository.update(selectedBook);
             statusLabel.setText("Updated book: " + selectedBook.getTitle());
+            loadBooks();
         }
     }
 @FXML
     private void deleteBook() {
-        Book selectedBook = booksListView.getSelectionModel().getSelectedItem();
+        Book selectedBook = (Book) booksListView.getSelectionModel().getSelectedItem();
     Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
     confirmationAlert.setTitle("Confirmation suppression");
     confirmationAlert.setHeaderText(null);
