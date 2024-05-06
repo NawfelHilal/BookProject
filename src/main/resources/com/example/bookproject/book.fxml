@@ -72,8 +72,8 @@
                           <TextField fx:id="isbnTextField" promptText="ISBN" />
                           <HBox spacing="10">
                               <Button fx:id="addButton" text="Add" onAction="#addBook" />
-                              <Button fx:id="editButton" text="Edit" />
-                              <Button fx:id="deleteButton" text="Delete" />
+                              <Button fx:id="editButton" text="Edit" onAction="#editBook" />
+                              <Button fx:id="deleteButton" text="Delete" onAction="#deleteBook" />
                           </HBox>
                       </VBox>
                   </HBox>

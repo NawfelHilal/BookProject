@@ -6,13 +6,10 @@ import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 
 import java.util.List;
+import java.util.Optional;
 
 public class HelloController {
 
@@ -85,11 +82,26 @@ public class HelloController {
 @FXML
     private void deleteBook() {
         Book selectedBook = booksListView.getSelectionModel().getSelectedItem();
-        if (selectedBook != null) {
-            bookRepository.delete(selectedBook);
-            booksListView.getItems().remove(selectedBook);
-            statusLabel.setText("Deleted book: " + selectedBook.getTitle());
-        }
+    Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+    confirmationAlert.setTitle("Confirmation suppression");
+    confirmationAlert.setHeaderText(null);
+    confirmationAlert.setContentText("Êtes-vous sûr de vouloir supprimer la recette '" + selectedBook.getTitle() + "' ?");
+
+    ButtonType confirmationButton = new ButtonType("Supprimer", ButtonBar.ButtonData.OK_DONE);
+    confirmationAlert.getButtonTypes().setAll(confirmationButton, ButtonType.CANCEL);
+    Optional<ButtonType> result = confirmationAlert.showAndWait();
+
+    if (result.isPresent() && result.get() == confirmationButton) {
+
+        booksListView.getItems().remove(selectedBook);
+        new BookRepository().delete(selectedBook);
+
+        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle("Suppression réussie");
+        successAlert.setHeaderText(null);
+        successAlert.setContentText("La recette a été supprimée avec succès.");
+        successAlert.showAndWait();
+    }
     }
 @FXML
     private void updateBookDetailsFields(Book book) {
